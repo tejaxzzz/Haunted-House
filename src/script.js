@@ -464,3 +464,6 @@ function goFullscreen() {
 document.body.addEventListener('click', () => {
   goFullscreen();
 });
+
+
+console.log("error")
