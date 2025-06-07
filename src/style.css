@@ -24,6 +24,22 @@ html, body {
   display: block; /* remove inline styles if canvas */
 }
 
+#fullscreen-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  fill: white;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+#fullscreen-btn:hover {
+  opacity: 1;
+}
 
 
 
