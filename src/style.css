@@ -4,11 +4,31 @@
     padding: 0;
 }
 
-html,
-body
-{
-    overflow: hidden;
+
+
+
+
+html, body {
+  margin: 0; 
+  padding: 0; 
+  height: 100%;
+  width: 100%;
+  overflow: hidden; /* prevents scrolling */
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+  background: black; /* or any bg */
 }
+
+#your-canvas-or-main-container {
+  width: 100vw;
+  height: 100vh;
+  display: block; /* remove inline styles if canvas */
+}
+
+
+
+
+
+
 
 .webgl
 {
