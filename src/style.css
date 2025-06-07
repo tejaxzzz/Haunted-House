@@ -17,3 +17,19 @@ body
     left: 0;
     outline: none;
 }
+@media screen and (orientation: portrait) {
+  body::before {
+    content: "Please rotate your device to landscape.";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    color: white;
+    font-size: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+}

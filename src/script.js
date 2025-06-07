@@ -385,6 +385,28 @@ sky.material.uniforms['sunPosition'].value.set(0.3, -0.038, -0.95)
 // scene.fog = new THREE.Fog('#04343f', 1, 13)
 scene.fog = new THREE.FogExp2('#04343f', 0.1)
 
+// ========== HORROR BACKGROUND SOUND ==========
+const listener = new THREE.AudioListener()
+camera.add(listener)
+
+const sound = new THREE.Audio(listener)
+const audioLoader = new THREE.AudioLoader()
+
+// Direct audio URL from Pixabay
+audioLoader.load('/audio/spooky.mp3', function(buffer) {
+    sound.setBuffer(buffer)
+    sound.setLoop(true)
+    sound.setVolume(0.5)
+
+    document.addEventListener('click', () => {
+        if (!sound.isPlaying) sound.play()
+    })
+}, undefined, function(err) {
+    console.error('❌ Audio load error:', err)
+})
+
+
+
 /**
  * Animate
  */
