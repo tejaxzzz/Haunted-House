@@ -12,8 +12,8 @@ const gui = new GUI({ title: 'Tweaks' })
 gui.close();
 const guiStyle = gui.domElement.style;
 guiStyle.position = 'fixed';
-guiStyle.top = '8px';
-guiStyle.right = '8px';
+guiStyle.top = '0px';
+guiStyle.right = '0px';
 // guiStyle.width = '110px';
 guiStyle.zIndex = '10000';
 guiStyle.cursor = 'pointer'; // For toggle-like feel
