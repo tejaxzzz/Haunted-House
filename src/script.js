@@ -8,7 +8,17 @@ import GUI from 'lil-gui'
  * Base
  */
 // Debug
-const gui = new GUI()
+const gui = new GUI({ title: 'Tweaks' })
+gui.close();
+const guiStyle = gui.domElement.style;
+guiStyle.position = 'fixed';
+guiStyle.top = '8px';
+guiStyle.right = '8px';
+// guiStyle.width = '110px';
+guiStyle.zIndex = '10000';
+guiStyle.cursor = 'pointer'; // For toggle-like feel
+// Set the width manually instead of auto
+// gui.domElement.style.width = '160px';  // Adjust to desired width
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
@@ -457,30 +467,3 @@ tick()
 
 
 
-
-
-
-
-const fullscreenBtn = document.getElementById('fullscreen-btn');
-
-fullscreenBtn.addEventListener('click', () => {
-  const elem = document.documentElement; // fullscreen entire page
-
-  if (!document.fullscreenElement) {
-    if (elem.requestFullscreen) {
-      elem.requestFullscreen();
-    } else if (elem.webkitRequestFullscreen) { // Safari
-      elem.webkitRequestFullscreen();
-    } else if (elem.msRequestFullscreen) { // IE11
-      elem.msRequestFullscreen();
-    }
-  } else {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    } else if (document.webkitExitFullscreen) {
-      document.webkitExitFullscreen();
-    } else if (document.msExitFullscreen) {
-      document.msExitFullscreen();
-    }
-  }
-});
